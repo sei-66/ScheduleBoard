@@ -5,5 +5,5 @@ from .models import Company
 
 # Create your views here.
 class ScheduleBoardView(ListView):
-    template_name = "schedule/scheduleboard.html"
+    template_name = "schedule/schedule_list.html"
     model = Company
