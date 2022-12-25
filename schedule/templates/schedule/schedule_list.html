@@ -3,12 +3,38 @@
 {% block title %}スケジュール一覧{% endblock %}
 
 {% block content %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">会社名</th>
+            <th scope="col">インターンシップ</th>
+            <th scope="col">会社説明会</th>
+            <th scope="col">ES締切り</th>
+            <th scope="col">適性検査</th>
+            <th scope="col">一次面接</th>
+            <th scope="col">二次面接</th>
+            <th scope="col">三次面接</th>
+            <th scope="col">その他</th>
+            <th scope="col">内定日</th>
+            <th scope="col">詳細</th>
+        </tr>
+    </thead>
     {% for item in object_list %}
-    <div class="card">
-        <h2 class="card-title">{{ item.company_name }}</h2>
-        <div class="card-body">
-            <a href="{% url 'detail-schedule' item.pk %}" class="btn btn-primary">詳細へ</a>
-        </div>
-    </div>
+        <tbody>
+        <tr>
+            <th scope="row">{{ item.company_name }}</th>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td>1/1</td>
+            <td><a href="{% url 'detail-schedule' item.pk %}" class="btn  btn-link">>></a></td>
+        </tr>
+    </tbody>
     {% endfor %}
+    </table>
 {% endblock content %}

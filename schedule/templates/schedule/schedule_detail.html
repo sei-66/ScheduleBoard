@@ -13,8 +13,8 @@
     <p>マイナビ：{{ object.mainabi_url }}</p>
     <p>事業内容：{{ object.business }}</p>
     <p>メモ：{{ object.memo }}</p>
-    <a href="{% url 'list-schedule' %}" class="btn btn-primary">一覧へ</a>
-    <a href="{% url 'update-schedule' object.pk %}" class="btn btn-primary">編集</a>
-    <a href="{% url 'delete-schedule' object.pk %}" class="btn btn-primary">削除</a>
+    <a href="{% url 'list-schedule' %}" class="btn btn btn-outline-primary">一覧へ</a>
+    <a href="{% url 'update-schedule' object.pk %}" class="btn btn btn-outline-primary">編集</a>
+    <a href="{% url 'delete-schedule' object.pk %}" class="btn btn btn-outline-primary">削除</a>
 </div>
 {% endblock content %}
