@@ -3,8 +3,12 @@
 {% block title %}企業削除{% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">{{ object.company_name }}を削除する</button>
-    </form>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-4">
+        <h3>{{ object.company_name }}を削除して本当によろしいですか？</h3>
+    </div>
+    <a href="{% url 'detail-schedule' object.pk %}" class="btn btn btn-outline-primary">戻る</a>
+    <button type="submit" class="btn btn-outline-danger">削除する</button>
+</form>
 {% endblock content %}
