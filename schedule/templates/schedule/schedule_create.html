@@ -3,9 +3,32 @@
 {% block title %}企業追加{% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="追加する">
-    </form>
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">会社名</label>
+        <input class="form-control" name="company_name" value="{{ object.company_name }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ホームページURL</label>
+        <input class="form-control" name="hp_url" name="company_name" value="{{ object.hp_url }}" type="url">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">リクナビURL</label>
+        <input class="form-control" name="rikunabi_url" value="{{ object.rikunabi_url }}" type="url">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">マイナビURL</label>
+        <input class="form-control" name="mainabi_url" value="{{ object.mainabi_url }}" type="url">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">事業内容</label>
+        <textarea class="form-control" name="business" cols="40" rows="10">{{ object.business }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">メモ</label>
+        <textarea class="form-control" name="memo" cols="40" rows="10">{{ object.memo }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-success">追加する</button>
+</form>
 {% endblock content %}
