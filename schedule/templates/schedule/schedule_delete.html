@@ -5,10 +5,12 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    <div class="mb-4">
+    <div class="mb-4 text-center">
         <h3>{{ object.company_name }}を削除して本当によろしいですか？</h3>
     </div>
-    <a href="{% url 'detail-schedule' object.pk %}" class="btn btn btn-outline-primary">戻る</a>
-    <button type="submit" class="btn btn-outline-danger">削除する</button>
+    <div class="text-center">
+        <a href="{% url 'detail-schedule' object.pk %}" class="btn btn btn-outline-primary">戻る</a>
+        <button type="submit" class="btn btn-outline-danger">削除する</button>
+    </div>
 </form>
 {% endblock content %}

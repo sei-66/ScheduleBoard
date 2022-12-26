@@ -6,7 +6,7 @@ from django.views.generic import (
     CreateView,
     DeleteView,
     UpdateView,
-    )
+)
 from .models import Company
 
 
@@ -39,6 +39,7 @@ class DeleteScheduleView(DeleteView):
     template_name = "schedule/schedule_delete.html"
     model = Company
     success_url = reverse_lazy("list-schedule")
+
 
 class UpdateScheduleView(UpdateView):
     template_name = "schedule/schedule_update.html"

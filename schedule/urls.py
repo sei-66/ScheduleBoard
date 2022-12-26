@@ -5,20 +5,13 @@ from . import views
 
 
 urlpatterns = [
-    path(
-        "schedule/",
-        views.ListScheduleView.as_view(),
-        name="list-schedule"
-    ),
+    path("schedule/", views.ListScheduleView.as_view(), name="list-schedule"),
     path(
         "schedule/<int:pk>/detail",
         views.DetailScheduleView.as_view(),
         name="detail-schedule",
     ),
-    path("schedule/create",
-        views.CreateScheduleView.as_view(),
-        name="create-schedule"
-    ),
+    path("schedule/create", views.CreateScheduleView.as_view(), name="create-schedule"),
     path(
         "schedule/<int:pk>/delete",
         views.DeleteScheduleView.as_view(),

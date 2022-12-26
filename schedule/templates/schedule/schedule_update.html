@@ -3,7 +3,7 @@
 {% block title %}編集{% endblock %}
 
 {% block content %}
-<form method='POST' enctype="multipart/form-data">
+<form method='POST' enctype="multipart/form-data" class="p-4 m-4 bg-light border border-3">
     {% csrf_token %}
     <div class="mb-3">
         <label class="form-label">会社名</label>
@@ -29,6 +29,15 @@
         <label class="form-label">メモ</label>
         <textarea class="form-control" name="memo" cols="40" rows="10">{{ object.memo }}</textarea>
     </div>
-    <button type="submit" class="btn btn-outline-success">編集する</button>
+    <div class="row center-block text-center">
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <a href="{% url 'detail-schedule' object.pk %}" class="btn btn btn-outline-secondary w-100">戻る</a>
+        </div>
+        <div class="col-5">
+            <button type="submit" class="btn btn-outline-primary w-100">編集する</button>
+        </div>
+    </div>
 </form>
 {% endblock %}
